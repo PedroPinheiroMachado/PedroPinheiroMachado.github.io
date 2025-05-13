@@ -1,26 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pedro Pinheiro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="language-switch">
-    <button onclick="switchLang('en')">🇺🇸 English</button>
-    <button onclick="switchLang('pt')">🇧🇷 Português</button>
-  </div>
+  <header>
+    <h1>Pedro Pinheiro</h1>
+    <div class="language-switch">
+      <button onclick="switchLang('en')">🇺🇸 English</button>
+      <button onclick="switchLang('pt')">🇧🇷 Português</button>
+    </div>
+  </header>
 
-  <div id="en" class="lang-section active">
-    <h1>Hi! 👋 I'm Pedro Pinheiro</h1>
-    <p>Finance • Data Analysis • Applied Math</p>
-  </div>
+  <!-- 🇺🇸 English -->
+  <main id="en" class="lang-section active">
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm an Applied Mathematics student at Universidade Federal Fluminense, passionate about Finance, Data Analysis, and Quantitative Methods. I'm currently exploring Python, Machine Learning, and Algorithmic Trading.
+      </p>
+    </section>
 
-  <div id="pt" class="lang-section">
-    <h1>Olá! 👋 Eu sou Pedro Pinheiro</h1>
-    <p>Finanças • Análise de Dados • Matemática Aplicada</p>
-  </div>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="https://bit.ly/4j45hmh" target="_blank">📊 Airbnb Data Analysis - Rome</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Curriculum</h2>
+      <p><a href="curriculo.pdf" target="_blank">📄 Download my resume (PDF)</a></p>
+    </section>
+  </main>
+
+  <!-- 🇧🇷 Português -->
+  <main id="pt" class="lang-section">
+    <section>
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou estudante de Matemática Aplicada na Universidade Federal Fluminense, apaixonado por Finanças, Análise de Dados e Métodos Quantitativos. Atualmente, estou explorando Python, Machine Learning e Trading Algorítmico.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projetos</h2>
+      <ul>
+        <li><a href="https://bit.ly/4j45hmh" target="_blank">📊 Análise de Dados do Airbnb - Roma</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Currículo</h2>
+      <p><a href="curriculo.pdf" target="_blank">📄 Baixar meu currículo (PDF)</a></p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
