@@ -1,65 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pedro Pinheiro</title>
-  <link rel="stylesheet" href="style.css" />
+<html lang="pt-BR"> <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pedro Pinheiro - Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header>
-    <h1>Pedro Pinheiro</h1>
-    <div class="language-switch">
-      <button onclick="switchLang('en')">🇺🇸 English</button>
-      <button onclick="switchLang('pt')">🇧🇷 Português</button>
-    </div>
-  </header>
 
-  <!-- 🇺🇸 English -->
-  <main id="en" class="lang-section active">
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I'm an Applied Mathematics student at Universidade Federal Fluminense, passionate about Finance, Data Analysis, and Quantitative Methods.
-         I'm currently exploring Python, Machine Learning, and Algorithmic Trading.
-      </p>
+    <header>
+        <div class="logo">Pedro Pinheiro</div>
+        <nav>
+            <ul>
+                <li><a href="#sobre" data-lang-key="navSobre">Sobre</a></li>
+                <li><a href="#projetos" data-lang-key="navProjetos">Projetos</a></li>
+                <li><a href="#curriculo" data-lang-key="navCurriculo">Currículo</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <button onclick="switchLang('en')">🇺🇸 EN</button>
+            <button onclick="switchLang('pt')">🇧🇷 PT</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2 data-lang-key="heroTitle">Estudante de Matemática Aplicada & Aspirante a Quant</h2>
+        <p data-lang-key="heroSubtitle">Apaixonado por utilizar dados para resolver problemas financeiros complexos.</p>
+        <a href="#projetos" class="cta-button" data-lang-key="heroCTA">Veja Meus Projetos</a>
     </section>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://bit.ly/4j45hmh" target="_blank">📊 Airbnb Data Analysis - Rome</a></li>
-      </ul>
-    </section>
+    <main id="en" class="lang-section">
+        <section id="sobre-en">
+            <h2 data-lang-key="aboutTitle">About Me</h2>
+            <div class="about-content">
+                <div>
+                    <p data-lang-key="aboutP1">
+                        I'm an Applied Mathematics student at Universidade Federal Fluminense, passionate about Finance, Data Analysis, and Quantitative Methods.
+                    </p>
+                    <p data-lang-key="aboutP2">
+                        I'm currently exploring Python <i class="fab fa-python"></i>, Machine Learning <i class="fas fa-robot"></i>, and Algorithmic Trading. My goal is to [your goal/passion in English].
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <section>
-      <h2>Curriculum</h2>
-      <p><a href="curriculo.pdf" target="_blank">📄  Resume (PDF)</a></p>
-    </section>
-  </main>
+        <section id="projetos-en">
+            <h2 data-lang-key="projectsTitle">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3 data-lang-key="project1Title">📊 Airbnb Data Analysis - Rome</h3>
+                    <p data-lang-key="project1Desc">
+                        A deep dive into Airbnb listings in Rome, uncovering trends in pricing, availability, and host characteristics using Python, Pandas, and Seaborn.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span> <span>Pandas</span> <span>Data Visualization</span>
+                    </div>
+                    <a href="https://bit.ly/4j45hmh" target="_blank" class="project-link" data-lang-key="projectLink">View Project</a>
+                </article>
+                <article class="project-card">
+                    <h3 data-lang-key="project2Title">[Project 2 Title]</h3>
+                    <p data-lang-key="project2Desc">
+                        [Brief description of your second project in English.]
+                    </p>
+                    <div class="project-tags">
+                        <span>Technology 1</span> <span>Technology 2</span>
+                    </div>
+                    <a href="#" target="_blank" class="project-link" data-lang-key="projectLink">View Project</a>
+                </article>
+            </div>
+        </section>
 
-  <!-- 🇧🇷 Português -->
-  <main id="pt" class="lang-section">
-    <section>
-      <h2>Sobre Mim</h2>
-      <p>
-        Sou estudante de Matemática Aplicada na Universidade Federal Fluminense, apaixonado por Finanças, Análise de Dados e Métodos Quantitativos. Atualmente, estou explorando Python, Machine Learning e Trading Algorítmico.
-      </p>
-    </section>
+        <section id="curriculo-en">
+            <h2 data-lang-key="curriculumTitle">Resume</h2>
+            <p><a href="curriculo.pdf" target="_blank" class="cta-button" data-lang-key="curriculumLink">📄 Download Resume (PDF)</a></p>
+        </section>
+    </main>
 
-    <section>
-      <h2>Projetos</h2>
-      <ul>
-        <li><a href="https://bit.ly/4j45hmh" target="_blank">📊 Análise de Dados do Airbnb - Roma</a></li>
-      </ul>
-    </section>
+    <main id="pt" class="lang-section active">
+        <section id="sobre-pt">
+            <h2 data-lang-key="aboutTitle">Sobre Mim</h2>
+            <div class="about-content">
+                <div>
+                    <p data-lang-key="aboutP1">
+                        Sou estudante de Matemática Aplicada na Universidade Federal Fluminense, apaixonado por Finanças, Análise de Dados e Métodos Quantitativos.
+                    </p>
+                    <p data-lang-key="aboutP2">
+                        Atualmente, estou explorando Python <i class="fab fa-python"></i>, Machine Learning <i class="fas fa-robot"></i> e Trading Algorítmico. Meu objetivo é [seu objetivo/paixão em português].
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <section>
-      <h2>Currículo</h2>
-      <p><a href="curriculo.pdf" target="_blank">📄 Baixar meu currículo (PDF)</a></p>
-    </section>
-  </main>
+        <section id="projetos-pt">
+            <h2 data-lang-key="projectsTitle">Projetos</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3 data-lang-key="project1Title">📊 Análise de Dados do Airbnb - Roma</h3>
+                    <p data-lang-key="project1Desc">
+                        Uma análise aprofundada dos anúncios do Airbnb em Roma, descobrindo tendências em preços, disponibilidade e características dos anfitriões usando Python, Pandas e Seaborn.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span> <span>Pandas</span> <span>Visualização de Dados</span>
+                    </div>
+                    <a href="https://bit.ly/4j45hmh" target="_blank" class="project-link" data-lang-key="projectLink">Ver Projeto</a>
+                </article>
+                <article class="project-card">
+                    <h3 data-lang-key="project2Title">[Título do Projeto 2]</h3>
+                    <p data-lang-key="project2Desc">
+                        [Breve descrição do seu segundo projeto em português.]
+                    </p>
+                    <div class="project-tags">
+                        <span>Tecnologia 1</span> <span>Tecnologia 2</span>
+                    </div>
+                    <a href="#" target="_blank" class="project-link" data-lang-key="projectLink">Ver Projeto</a>
+                </article>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <section id="curriculo-pt">
+            <h2 data-lang-key="curriculumTitle">Currículo</h2>
+            <p><a href="curriculo.pdf" target="_blank" class="cta-button" data-lang-key="curriculumLink">📄 Baixar Currículo (PDF)</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p data-lang-key="footerText">&copy; 2024 Pedro Pinheiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

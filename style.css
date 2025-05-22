@@ -1,53 +1,333 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* Reset básico e configurações globais */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa; /* Cor de fundo um pouco mais suave */
+  color: #343a40; /* Cor de texto principal mais escura */
+  padding-top: 80px; /* Espaço para o header fixo, se você decidir fixá-lo */
+}
+
+/* Header */
 header {
-  background-color: #007acc;
+  background-color: #005f73; /* Um azul mais sóbrio */
   color: white;
-  padding: 20px;
+  padding: 1rem 2rem; /* Unidades relativas para padding */
   text-align: center;
+  display: flex; /* Para alinhar logo, nav e language switch */
+  justify-content: space-between; /* Espaçar os itens */
+  align-items: center; /* Centralizar verticalmente */
+  width: 100%;
+  position: fixed; /* Header fixo no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Para garantir que fique na frente */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.language-switch {
-  margin-top: 10px;
+.logo {
+  font-size: 1.8rem; /* Tamanho da fonte para o logo */
+  font-weight: bold;
+  color: #94d2bd; /* Cor de destaque para o logo */
 }
 
-button {
-  margin: 5px;
-  padding: 10px 15px;
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Links da navegação em linha */
+}
+
+nav ul li {
+  margin-left: 20px; /* Espaçamento entre os links */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #ee9b00; /* Cor de destaque no hover/focus */
+  border-bottom: 2px solid #ee9b00; /* Sublinhado sutil */
+}
+
+.language-switch button {
+  margin-left: 10px;
+  padding: 0.5rem 1rem;
   border: none;
-  background-color: white;
-  color: #007acc;
+  background-color: #e9ecef; /* Fundo claro para os botões */
+  color: #005f73; /* Cor do texto do botão */
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-main {
-  max-width: 800px;
-  margin: auto;
-  padding: 30px;
+.language-switch button:hover {
+  background-color: #007acc;
+  color: white;
 }
 
-section {
-  margin-bottom: 40px;
+.language-switch button.active-lang-button { /* Estilo para o botão de idioma ativo */
+  background-color: #ee9b00;
+  color: white;
+}
+
+
+/* Seção Hero */
+.hero {
+  background-color: #0a9396; /* Cor de fundo para a seção hero */
+  color: white;
+  padding: 4rem 2rem; /* Mais padding para destaque */
+  text-align: center;
+  margin-top: 0; /* Removido o margin-top já que o body tem padding-top */
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #e9d8a6; /* Cor de destaque para o título */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ee9b00; /* Cor de destaque para o botão CTA */
+  color: white;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #ca6702; /* Cor mais escura no hover */
+  transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+/* Conteúdo Principal (main) */
+main { /* Estilo para as seções <main id="en"> e <main id="pt"> */
+  max-width: 960px; /* Largura máxima um pouco maior */
+  margin: 2rem auto; /* Margem superior/inferior e centralizado */
+  padding: 2rem;
+  background-color: #ffffff; /* Fundo branco para o conteúdo principal */
+  box-shadow: 0 0 15px rgba(0,0,0,0.05); /* Sombra sutil */
+  border-radius: 8px;
 }
 
 .lang-section {
-  display: none;
+  display: none; /* Esconde por padrão */
 }
 
 .lang-section.active {
-  display: block;
+  display: block; /* Mostra a seção ativa */
 }
 
+section { /* Estilo para as tags <section> dentro de <main> */
+  margin-bottom: 3rem; /* Espaçamento maior entre seções */
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e9ecef; /* Linha divisória sutil */
+}
+section:last-child {
+  border-bottom: none; /* Remove a borda da última seção */
+  margin-bottom: 0;
+}
+
+section h2 { /* Estilo para os títulos das seções (Sobre, Projetos, Currículo) */
+  font-size: 2rem;
+  color: #005f73; /* Cor do título da seção */
+  margin-bottom: 1.5rem;
+  text-align: center; /* Centralizar títulos das seções */
+}
+
+/* Seção Sobre Mim */
+.about-content {
+  display: flex;
+  align-items: flex-start; /* Alinha itens no topo */
+  gap: 2rem; /* Espaço entre a imagem e o texto */
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Imagem redonda */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border: 3px solid #005f73; /* Borda sutil na foto */
+}
+
+.about-content p i { /* Estilo para os ícones dentro dos parágrafos */
+  color: #ee9b00; /* Cor de destaque para os ícones */
+  margin: 0 2px;
+}
+
+/* Seção Projetos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+  gap: 1.5rem; /* Espaço entre os cards de projeto */
+}
+
+.project-card {
+  background-color: #f8f9fa; /* Fundo um pouco diferente para os cards */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo do card verticalmente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Efeito de elevação no hover */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-image {
+  width: 100%;
+  max-height: 200px; /* Altura máxima para a imagem do projeto */
+  object-fit: cover; /* Cobre a área sem distorcer */
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #007acc; /* Cor do título do projeto */
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  margin-bottom: 1rem;
+}
+
+.project-tags span {
+  display: inline-block;
+  background-color: #e9ecef; /* Fundo para as tags */
+  color: #495057; /* Cor do texto das tags */
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px; /* Tags arredondadas */
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-link {
+  display: inline-block;
+  background-color: #007acc;
+  color: white !important; /* Força a cor branca no link */
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #0056b3; /* Cor mais escura no hover */
+}
+
+
+/* Seção Currículo */
+.curriculo a {
+  display: inline-block;
+  /* Reutiliza o estilo do cta-button ou project-link se desejar */
+  background-color: #28a745; /* Verde para download */
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.curriculo a:hover {
+  background-color: #218838;
+}
+
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #343a40; /* Fundo escuro para o rodapé */
+  color: #adb5bd; /* Cor clara para o texto do rodapé */
+  margin-top: 2rem;
+}
+
+/* Links Padrão (se não estiverem dentro de componentes específicos) */
 a {
   color: #007acc;
   text-decoration: none;
-  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column; /* Header empilha em telas menores */
+      padding: 1rem;
+      position: relative; /* Header deixa de ser fixo em telas pequenas */
+  }
+  body {
+      padding-top: 0; /* Remove padding do body se header não for fixo */
+  }
+
+  nav ul {
+      flex-direction: column; /* Menu de navegação empilha */
+      margin-top: 1rem;
+  }
+
+  nav ul li {
+      margin-left: 0;
+      text-align: center;
+      padding: 0.5rem 0;
+  }
+
+  .language-switch {
+      margin-top: 1rem;
+  }
+
+  .about-content {
+      flex-direction: column; /* Conteúdo do "Sobre Mim" empilha */
+      align-items: center; /* Centraliza a imagem */
+      text-align: center;
+  }
+
+  .profile-pic {
+      margin-bottom: 1rem;
+  }
+
+  .hero h2 {
+      font-size: 2rem;
+  }
+  .hero p {
+      font-size: 1rem;
+  }
+  section h2 {
+      font-size: 1.8rem;
+  }
 }
